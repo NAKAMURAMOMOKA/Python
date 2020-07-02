@@ -1,16 +1,13 @@
-shakkin = float(input("借金:" ))
-nennri = float(input("年利率(%): "))
-hensai =  int(input("返済額: " ))
+debit = int(250000)
+rate = float(14)
+repayment =  int(30000)
 total = 0
 month = 0
-while shakkin > hensai :
+while debit > repayment :
     month += 1
-    shakkin = shakkin*(1 + nennri/14/100) - hensai
-    print(str(month)+"月: 返済額",hensai,"円","残り",\
-    float(shakkin),format(" "))
-    total += hensai
-month += 1
-shakkin = shakkin*(1 + nennri/14/100)
-total += shakkin
-print(str(month)+"月: 返済額",float(shakkin),"円","これで完済。","返済総額: ",\
-int(total),"円",format(" "))
+    debit = debit * (1 + rate/12/100) - repayment
+    print(str(month)+"月: 返済額=",repayment,"円","残り",\
+    float(debit),format(" "))
+    total += repayment
+total += debit
+print(str(month)+"月: 返済額=",float(debit),"円","返済完了")
